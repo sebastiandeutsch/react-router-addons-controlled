@@ -43,6 +43,8 @@ You can find the library on `window.ReactRouterControlled`.
 
 There is no `<ControlledHashRouter>` because hash histories can't provide all of the information we need (I don't think anyway, haven't tried.)
 
+### Props
+
 ```js
 <Router
   history={history}                  // the history object to listen to
