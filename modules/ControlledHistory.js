@@ -46,12 +46,6 @@ class ControlledHistory extends React.Component {
     }
   }
 
-  // TODO: We need to do this to give them the right location, or require
-  // them to create their own history... I dunno yet.
-  //componentDidMount() {
-    //this.props.onChange(this.state.location, 'SYNC')
-  //}
-
   componentWillReceiveProps(nextProps) {
     if (
       !this.syncingHistory &&
