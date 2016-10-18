@@ -63,6 +63,8 @@ const App = connect((state) => {
               action: this.props.action
             })
           } else if (!window.block) {
+            // if you want to block transitions go into the console and type in
+            // `window.block = true` and transitions won't happen anymore
             this.props.dispatch({
               type: NAVIGATE,
               location,
