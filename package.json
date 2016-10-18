@@ -1,6 +1,6 @@
 {
   "name": "react-router-addons-controlled",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Controlled Router components for React Router",
   "repository": "ReactTraining/react-history",
   "author": "Ryan Florence",
