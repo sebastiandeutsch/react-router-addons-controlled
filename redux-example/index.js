@@ -83,6 +83,10 @@ const App = connect((state) => {
             <li><a href="https://google.com">Google</a></li>
           </ul>
           <button onClick={() => {
+            // navigating in a button click is not accessible,
+            // don't do it in apps, use a <Link>.
+            // You might do this though after a form is submit,
+            // or the user session is expired, etc.
             this.props.dispatch({
               type: NAVIGATE,
               location: { pathname: '/three' },
