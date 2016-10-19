@@ -43,9 +43,10 @@ You can find the library on `window.ReactRouterControlled`.
 
 There is no `<ControlledHashRouter>` because hash histories can't provide all of the information we need (I don't think anyway, haven't tried.)
 
-### Props
-
 ```js
+import Router from 'react-router-addons-controlled/ControlledBrowserRouter'
+import Router from 'react-router-addons-controlled/ControlledMemoryRouter'
+
 <Router
   history={history}                  // the history object to listen to
                                      
@@ -67,7 +68,18 @@ There is no `<ControlledHashRouter>` because hash histories can't provide all of
 
 So, just like with a controlled input, you respond to `onChange` by setting state, or dispatching in redux.
 
-### Examples
+## What's the point?
+
+The primary motivation for this is to make routing feel like anything else in an app that lifts state into something like redux or mobx. Let's consider Redux:
+
+In Redux application state is kept in the "store". Changes to application state are modeled as "actions". By sticking to these two constraints, the community as able to build things on top like the Redux Devtools. So, to model routing in Redux and othe paradigms like it we need a ways to:
+
+- Keep the router state (location and action) in the redux store (or mobx observable)
+- Model changes to the location as "dispatched actions" (or mobx... uh, i-dunno-what...)
+
+So intead of rendering a `<Redirect>` or calling `this.context.router.push(location)`, you can dispatch an action and pass that router state from your store to the Router and it will respond accordingly.
+
+## Examples
 
 Please see the examples for more detailed usage:
 
