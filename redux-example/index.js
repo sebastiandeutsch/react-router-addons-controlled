@@ -12,8 +12,6 @@ const NAVIGATE = 'NAVIGATE'
 
 const initialState = {
   router: {
-    location: history.location,
-    action: history.action
   }
 }
 
@@ -47,11 +45,14 @@ const App = connect((state) => {
   }
 
   render() {
+    const location = this.props.location || history.location;
+    const action = this.props.action || history.action;
+
     return (
       <Router
         history={history}
-        location={this.props.location}
-        action={this.props.action}
+        location={location}
+        action={action}
         onChange={(location, action) => {
           // you must always dispatch a `SYNC` action,
           // because, guess what? you can't actual control the browser history!
